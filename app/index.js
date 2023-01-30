@@ -2,6 +2,8 @@ const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { getData } = require("./service/meteoSensor");
+const sensor = require("./sensor");
+
 const app = express();
 
 app.get("/data", async (req, res) => {
