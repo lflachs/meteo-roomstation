@@ -1,6 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
-const getData = require("./service/meteoSensor");
+const { getData } = require("./service/meteoSensor");
 
 setInterval(() => {
   const { temperature, humidity, date } = getData();

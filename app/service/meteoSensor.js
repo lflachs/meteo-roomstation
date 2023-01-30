@@ -7,7 +7,7 @@ if (!sensorLib.initialize(sensorType, sensorPin)) {
   process.exit(1);
 }
 
-function readData() {
+function getData() {
   const readout = sensorLib.read();
   const temperature = readout.temperature;
   const humidity = readout.humidity;
@@ -15,4 +15,4 @@ function readData() {
   return { temperature, humidity, date: now };
 }
 
-module.exports = readData;
+module.exports = { getData };
