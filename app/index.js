@@ -2,9 +2,12 @@ const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { getData } = require("./service/meteoSensor");
+const cors = require("cors");
 const sensor = require("./sensor");
 
 const app = express();
+
+app.use(cors());
 
 app.get("/data", async (req, res) => {
   const meteoData = await prisma.meteoData.findMany();
